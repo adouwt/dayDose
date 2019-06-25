@@ -42,45 +42,45 @@ SQL注入
 
 ### web框架：
 #### vue
-vue 的使用
-vue-cli的使用
-vue的双向数据绑定 mvvm
-vue-router 的实现
-vuex的使用即实现
-axios的使用及实现
-virtual dom 原理
-vue 插件开发
-vue UI 库的开发
+vue 的使用  
+vue-cli的使用  
+vue的双向数据绑定 mvvm  
+vue-router 的实现  
+vuex的使用即实现  
+axios的使用及实现  
+virtual dom 原理  
+vue 插件开发  
+vue UI 库的开发  
 
 #### react 
-react 的使用
-create-react-app 的使用
-react 数据绑定
-diff 算法
-react-router
-redux
+react 的使用  
+create-react-app 的使用  
+react 数据绑定  
+diff 算法  
+react-router  
+redux  
 
 #### react-native
-react-native 初始化项目
-react-native 添砖加瓦
+react-native 初始化项目  
+react-native 添砖加瓦  
 
 #### 微信小程序
 
 #### flutter
 
 ### http 协议
-介绍
-安全
+介绍  
+安全  
 
 ### nodejs
-nodejs 中间件
-事件循环
-nodejs 增删改查api开发
+nodejs 中间件  
+事件循环  
+nodejs 增删改查api开发  
 
 ### webpack
-介绍及使用
-webpack 打包优化
-loader使用及开发
-plugin 使用及开发
+介绍及使用  
+webpack 打包优化  
+loader使用及开发  
+plugin 使用及开发  
 
 ### websocket
