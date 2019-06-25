@@ -3,42 +3,42 @@
 完成内容如下,后期会逐渐其他内容：
 
 ### JS 基础
-作用域
-作用域链
-闭包
-prototype， __proto__
-this 解析
-apply，call，bind
-浅拷贝
-深拷贝
-高阶函数
-事件循环
-常用的设计模式
-浏览器
-内核
-页面渲染原理
+作用域  
+作用域链  
+闭包  
+prototype， __proto__  
+this 解析  
+apply，call，bind   
+浅拷贝  
+深拷贝  
+高阶函数  
+事件循环  
+常用的设计模式  
+浏览器  
+内核  
+页面渲染原理  
 
 ### canvas
     使用
 ### Promise
+使用  
+手撸实现  
+### async/ await
 使用
 手撸实现
-async/ await
-使用
-手撸实现
-模块化
-commonJS
-cmd
-amd
-ES6 module
-跨域与安全
-何为跨域
-解决跨域
-web攻击
-xss
-csrf
-点击拦截
-SQL注入
+### 模块化
+commonJS  
+cmd  
+amd  
+ES6 module  
+### 跨域与安全
+何为跨域  
+解决跨域  
+### web攻击
+xss  
+csrf  
+点击拦截  
+SQL注入  
 
 ### web框架：
 #### vue
