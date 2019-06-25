@@ -204,13 +204,13 @@ module.exports = {
 
 ```
 #### 打包优化
-1.webpack 默认只支持 .js 和 .json  的文件，对于入口文件 和相互引入的文件，指定文件后缀名字；
-2.使用HappyPack 开辟多进程打包  
-3.在配置loader 解析文件时候，用exclude 指出不需要解析的文件
-4.使用ParallelUglifyPlugin开启多进程压缩JS文件
-5.Tree Shaking剔除JS死代码（import 这个顶层模块导入方法，打包时候，将没有用的模块注释，压缩阶段删除注释部分代码）
-6.提取第三方库,（optimization 配置，提取公共的模块，or html-webpack-externals-plugin 插件，提出公共的库函数）
-7.静态js css等文件上cdn
+1.webpack 默认只支持 .js 和 .json  的文件，对于入口文件 和相互引入的文件，指定文件后缀名字；   
+2.使用HappyPack 开辟多进程打包    
+3.在配置loader 解析文件时候，用exclude 指出不需要解析的文件  
+4.使用ParallelUglifyPlugin开启多进程压缩JS文件  
+5.Tree Shaking剔除JS死代码（import 这个顶层模块导入方法，打包时候，将没有用的模块注释，压缩阶段删除注释部分代码）  
+6.提取第三方库,（optimization 配置，提取公共的模块，or html-webpack-externals-plugin 插件，提出公共的库函数）  
+7.静态js css等文件上cdn  
 #### loader 使用及开发
 
 #### plugin 使用及开发
