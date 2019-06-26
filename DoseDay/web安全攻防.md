@@ -16,3 +16,5 @@ https://edu.aliyun.com/?default=<script>alert(document.cookie)</script>  访问�
 防护：
 - web页面渲染的所有内容或者渲染的数据都必须来自服务器
 - 尽量不要从URL，document.referrer, document.forms 等这种DOM API 中获取数据直接渲染
+- 尽量不要使用 eval, new Function()，document.write()，document.writeln()，window.setInterval()，window.setTimeout()，innerHTML，document.creteElement() 等可执行字符串的方法。
+- 如果做不到以上几点，也必须对涉及 DOM 渲染的方法传入的字符串参数做 escape 转义。前端渲染的时候对任何的字段都需要做 escape 转义编码。
