@@ -1,5 +1,5 @@
 ### https
-**http + ssl（server socket layer）**
+**http + ssl（secure socket layer）**
 
 #### http的缺点
 - 通信使用明文，没有加密，信息容易被窃取
