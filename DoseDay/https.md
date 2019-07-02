@@ -30,7 +30,7 @@ http + 加密 + 查明对方身份（证书）+ 完整性保护  = https
 - 4、最后服务器发送serverHelloDone报文通知客户端，最初阶段的ssl握手协商部分结束
 - 5、客户端发送报文ClientKeyExchange作为回应，报文包含一个pre-master secret的随机密码串。该报文，已经被服务器发来的公钥加密；
 - 6、客户端继续发送Change Cipher Spec 报文，该报文提示服务器之后的通信会采用 pre-master secret密钥加密；
-- 7、客户端发送finshed 结束报文。该报文包含：链接至今的全部报文的整体校验值；
+- 7、客户端发送finshed 结束报文。该报文包含：链接至今的全部报文的整体校验值;服务端用私钥去解密改报文；
 - 8、服务器同样发送Change Cipher Spec 报文；
 - 9、服务器发送finished结束报文；
 - 10、服务器和客户端的finished 报文交换完毕，ssl链接完成，将进行http通讯；
