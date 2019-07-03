@@ -26,6 +26,9 @@ apply，call，bind
 ### async/ await
 使用
 手撸实现
+
+### 节流和防抖
+https://juejin.im/post/5d1bf9edf265da1b7004c3e1?utm_source=gold_browser_extension
 ### 模块化
 commonJS  
 cmd  
@@ -93,6 +96,8 @@ loader使用及开发
 plugin 使用及开发  
 
 ### 正则表达式
+
+### typescript
 
 ### websocket
 
