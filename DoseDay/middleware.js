@@ -1,28 +1,70 @@
-let app = {
-    use: function (req, fn) {
-        if(req) {
-            m = req;
-            if(m == 'get' || m == 'GET') {
-                console.log('get')
-                fn();
-                this.next();
-            } 
-            if(m == 'post' || m == 'POST') {
-                console.log('post');
-                fn();
-                this.next();
-            } 
+/**
+ * 仿照express实现中间件的功能
+ *
+ * Created by BadWaka on 2017/3/6.
+ */
+
+var http = require('http');
+
+/**
+ * 仿express实现中间件机制
+ *
+ * @return {app}
+ */
+function express() {
+
+    var funcs = []; // 待执行的函数数组
+
+    var app = function (req, res) {
+        var i = 0;
+
+        function next() {
+            var task = funcs[i++];  // 取出函数数组里的下一个函数
+            if (!task) {    // 如果函数不存在,return
+                return;
+            }
+            task(req, res, next);   // 否则,执行下一个函数
         }
-    },
-    next: function () {
-        // return this.use();
+
+        next();
     }
+
+    /**
+     * use方法就是把函数添加到函数数组中
+     * @param task
+     */
+    app.use = function (task) {
+        funcs.push(task);
+    }
+
+    return app;    // 返回实例
 }
 
-app.use('get', function(){
-    console.log('get路由被检测到了，要执行get 对应的方法')
-})
+// 下面是测试case
 
-app.use('post', function(){
-    console.log('post路由被检测到了，要执行post 对应的方法')
-})
+var app = express();
+http.createServer(app).listen('3000', function () {
+    console.log('listening 3000....');
+});
+
+function middlewareA(req, res, next) {
+    console.log('middlewareA before next()');
+    next();
+    console.log('middlewareA after next()');
+}
+
+function middlewareB(req, res, next) {
+    console.log('middlewareB before next()');
+    next();
+    console.log('middlewareB after next()');
+}
+
+function middlewareC(req, res, next) {
+    console.log('middlewareC before next()');
+    next();
+    console.log('middlewareC after next()');
+}
+
+app.use(middlewareA);
+app.use(middlewareB);
+app.use(middlewareC);

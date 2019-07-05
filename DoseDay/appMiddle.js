@@ -44,6 +44,18 @@ app.get('/', function(req, res, next) {
     res.send('req.paramasQuery 经过不同的中间件处理后的结果是：' + req.paramasQuery + ', res中paramasQueryResult的累计值为：' + res.paramasQueryResult); // 7 8
 })
 
+app.get('/two', function(req,res, next){
+    console.log('two a');
+    req.pathFirstMiddel = 'function of two middle'
+    next();
+}, function(req,res, next){
+    console.log('two b');
+    console.log(req.pathFirstMiddel);
+    next();
+})
+
+// app.use 全局引入中间件函数， app.get(path, fn,fn); 局部路径引入中间件函数
+
 app.listen(5000, function() {
     console.log('5000 端口启动了')
 })
