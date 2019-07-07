@@ -48,6 +48,7 @@ SQL注入
 #### vue
 vue 的使用  
 vue-cli的使用  
+vue的生命周期   
 vue的双向数据绑定 mvvm  
 vue-router 的实现  
 vuex的使用即实现  

@@ -212,6 +212,73 @@ module.exports = {
 5.Tree Shaking剔除JS死代码（import 这个顶层模块导入方法，打包时候，将没有用的模块注释，压缩阶段删除注释部分代码）  
 6.提取第三方库,（optimization 配置，提取公共的模块，or html-webpack-externals-plugin 插件，提出公共的库函数）  
 7.静态js css等文件上cdn  
+8.js懒加载
+
+优化：  
+1. 基础库分离  
+ - html-webpack-externals-plugin 插件, cdn 的方式引用基础库js
+ - ```
+    plugins:[
+        new HtmlWebpackExternalsPlugin({
+            externals:[
+                {
+                    modules: 'react',
+                    entry: 'url',
+                    global: "React"
+                },
+                {
+                    modules: 'react-dom',
+                    entry: 'url',
+                    global: "ReactDom"
+                },
+            ]
+        })
+    ]
+ ``
+
+2. 公共脚本分离, 比如多个页面使用的utils 方法,页面公共文件
+-  SplitChunksPlugin (webpack4 内置)
+- ```
+    module.exports = {
+        optimization: {
+            splitChunks: {
+                chunks: "async", // all,
+                minSize: 3000,
+                maxSize: 0,
+                minChunks: 1,
+                maxAsyncRequests: 5,
+                name: true,
+                cacheGroups: {
+                    vendors: {
+                        test: /[\\/]node_modules[\\/]/,
+                        priority: -10
+                    }
+                }
+            }
+        }
+    }
+
+    optimization: {
+        splitChunks: {
+            cacheGroups: {
+                vendors: {
+                    test: /(react|react-dom)/,
+                    name: 'vendors',// 打包后的名字为 vendors,
+                    chunks: 'all'
+                }
+            }
+        }
+    }
+
+
+``
+
+3. 脚本懒加载 
+- 插件： @babel/plugin-syntax-dynamic-import   
+- commonjs: require.ensure   
+- es6: 动态import（ import(), babel 转换）  
+- 插件： "plugins": ["@babel/plugin-syntax-dynamic-import"]  
+
 #### loader 使用及开发
 
 #### plugin 使用及开发
